@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.memory-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 50%;
+  height: 80vh;
+  margin-bottom: 10vh;
+  margin-top: 3vh;
+  max-width: 500px;
+  max-height: 500px;
+  gap: 1rem;
+}
+.card {
+  width: calc(100% / 4 - 1rem);
+  aspect-ratio: 1/1;
+  border: 1px solid #ccc;
+}
+.card img {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+  cursor: pointer;
+ 
+}
+
+.card.active img {
+  visibility: visible; /*per far funzionare la trasformazione */
+  display: block; /*per togliere il bordino di spazio che hanno le immagini */
+  rotate: y 90deg;
+  transform: rotateY(90deg);
+  transition: transform 0.5s;
+  margin: 0.125rem 0; /*perché mi si rimpicciolivano i quadrati*/
+}
+
+h1 {
+  height: 10vh;
+  padding-top: 5vh;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.card:active {
+  background-color: #ccc;
+}
+
+#resetButton{
+  border: 0px;
+  background-color:#12364d;
+  padding:0.7rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+color:rgb(252, 176, 13);
+margin-top: 3vh;
+cursor:pointer;
+}
